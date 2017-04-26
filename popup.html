@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>My Test Extension Options</title>
+	<style media="screen">
+		html,
+		body {
+			height: 100%;
+			width: 100%;
+			font-family: Helvetica, Arial, sans-serif;
+			background: #f3f3f3;
+			color: #333;
+			font-size: 16px;
+		}
+
+		html,
+		body,
+		p,
+		img {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			color: #0080ff;
+		}
+
+		.header {
+			background-color: #070707;
+			padding: 2px;
+		}
+
+		.title {
+			text-align: center;
+			color: white;
+		}
+
+		.responsive-container {
+			display: block;
+			font-size: 1em;
+			min-width: 300px;
+			min-height: 300px;
+			position: relative;
+			color: #333;
+			margin: 0 auto;
+		}
+
+		.list {
+			position: relative;
+			padding-top: 1px;
+			padding-bottom: 1px;
+			padding-left: 0;
+			margin-bottom: 20px;
+		}
+
+		.item {
+			color: #444;
+			background-color: #fff;
+			border-color: #ddd;
+			position: relative;
+			z-index: 2;
+			display: block;
+			margin: -1px;
+			padding: 15px;
+			border-width: 1px;
+			border-style: solid;
+			font-size: 16px;
+		}
+
+		.item-divider {
+			padding-top: 7.5px;
+			padding-bottom: 7.5px;
+			min-height: 30px;
+			background-color: #f5f5f5;
+			color: #222;
+			font-weight: 700;
+		}
+
+		.toggle {
+			position: relative;
+			display: inline-block;
+			margin: -5px;
+			padding: 5px
+		}
+
+		.toggle input:checked+.track {
+			border-color: #e50914;
+			background-color: #e50914
+		}
+
+		.toggle.dragging .handle {
+			background-color: #f2f2f2!important
+		}
+
+		.toggle input {
+			display: none
+		}
+
+		.toggle .track {
+			transition-timing-function: ease-in-out;
+			transition-duration: .2s;
+			transition-property: background-color, border;
+			display: inline-block;
+			box-sizing: border-box;
+			width: 54px;
+			height: 32px;
+			border: solid 2px #070707;
+			border-radius: 20px;
+			background-color: #070707;
+			content: ' ';
+			cursor: pointer
+		}
+
+		.toggle .handle {
+			transition: .2s ease-in-out;
+			position: absolute;
+			top: 7px;
+			left: 7px;
+			display: block;
+			width: 28px;
+			height: 28px;
+			border-radius: 28px;
+			background-color: #fff
+		}
+
+		.toggle .handle:before {
+			position: absolute;
+			top: -4px;
+			left: -22px;
+			padding: 19px 35px;
+			content: " "
+		}
+
+		.toggle input:checked+.track .handle {
+			transform: translate3d(22px, 0, 0);
+			background-color: #fff
+		}
+
+		.item-toggle {
+			padding-right: 99px
+		}
+
+		.item-toggle.active {
+			box-shadow: none
+		}
+
+		.item-toggle .toggle {
+			position: absolute;
+			top: 7.5px;
+			right: 15px;
+			z-index: 3
+		}
+
+		.footer {
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			padding: 10px;
+			background-color: #f3f3f3;
+			color: #999999;
+			border-top: 1px solid #ddd;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="header">
+		<h3 class="title">Settings</h3>
+	</div>
+
+
+	<div class="container">
+		<div class="responsive-container">
+			<ul class="list">
+				<li class="item item-toggle">
+					<span>Enable auto skip</span>
+					<label class="toggle enable-pointer-events disable-user-behavior">
+						<input type="checkbox"/>
+						<div class="track"><div class="handle"></div></div>
+				</label>
+
+				</li>
+			</ul>
+
+			<ul class="list">
+				<li class="item item-divider">
+					Options divider
+				</li>
+				<li class="item item-toggle">
+					<span>Skip Intos</span>
+					<label class="toggle enable-pointer-events disable-user-behavior">
+						<input type="checkbox"/>
+						<div class="track"><div class="handle"></div></div>
+				</label>
+				</li>
+				<li class="item item-toggle">
+					<span>Skip Endings</span>
+					<label class="toggle enable-pointer-events disable-user-behavior">
+						<input type="checkbox"/>
+						<div class="track"><div class="handle"></div></div>
+				</label>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<p>Problemas , melhorias ? nos avise ! </p>
+		<span>aqui penso em colocar links e etc</span>
+	</footer>
+
+	<script src="popup.js"></script>
+
+</body>
+
+</html>
